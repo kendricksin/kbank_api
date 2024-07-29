@@ -5,15 +5,16 @@ from datetime import datetime
 import pytz
 import qrcode
 from io import BytesIO
+import os
+from dotenv import load_dotenv
 
 # OAuth 2.0 API endpoint
 OAUTH_URL = "https://openapi-sandbox.kasikornbank.com/v2/oauth/token"
 # QR Code generation API endpoint
 QR_URL = "https://openapi-sandbox.kasikornbank.com/v1/qrpayment/request"
 
-# Your credentials
-CONSUMER_ID = "suDxvMLTLYsQwL1R0L9UL1m8Ceoibmcr"
-CONSUMER_SECRET = "goOfPtGLoGxYP3DG"
+CONSUMER_ID = os.getenv('CONSUMER_ID')
+CONSUMER_SECRET = os.getenv('CONSUMER_SECRET')
 
 # Partner information
 PARTNER_ID = "PTR1051673"
